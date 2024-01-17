@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: rgb(43, 43, 43);
+  padding: 20px 10px;
+}
+
+#navbar a {
+  float: left;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+
+.navbar a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#navbar a:hover {
+  background-color: #704b73;
+  color: rgb(255, 255, 255);
+}
+
+#navbar a.active {
+  background-color: rgb(215, 0, 211);
+  color: rgb(0, 0, 0);
+}
+
+#navbar-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  #navbar-right {
+    float: none;
+  }
+}
+
+#one {
+    color:black;
+    text-align: center;
+    font-style: italic;
+    font-size: 150px;
+    font-weight: bold;
+  }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+  body 
+{
+  background-color: rgb(215, 0, 211);
+}
+
+
+</style>
+</head>
+<body>
+
+<div id="navbar">
+  <a href="welcome_page.html" class="logo">
+    <img src="icon.png" width="200" height="54">
+  </a>
+  <div id="navbar-right">
+    <a class="active" href="welcome_page.html">Home</a>
+    <a href="aboutUs.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+  </div>
+</div>
+
+<img src="wc.png" width=100%>
+<img src="Home.png" width=100%>
+<img src="FAQ.jpg" width=100%>
+
+<br>
+  
+<script>
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
+  </script>
+
+</body>
+</html>

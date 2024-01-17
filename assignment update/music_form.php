@@ -1,0 +1,164 @@
+<?php 
+session_start();
+//check if session exists
+if(isset($_SESSION["Username"])) {
+?>
+
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <style>
+body { 
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+    text-align: center;
+    background-image: url("bg2.jpg") ;
+    background-size: 1600px 850px;
+
+    * {box-sizing: border-box;}
+    body { 
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    #navbar {
+      overflow: hidden;
+      background-color: rgb(43, 43, 43);
+      padding: 20px 10px;
+    }
+    
+    #navbar a {
+      float: left;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px; 
+      line-height: 25px;
+      border-radius: 4px;
+    }
+    
+    
+    .navbar a.logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+    
+    #navbar a:hover {
+      background-color: #704b73;
+      color: rgb(255, 255, 255);
+    }
+    
+    #navbar a.active {
+      background-color: rgb(215, 0, 211);
+      color: rgb(0, 0, 0);
+    }
+    
+    #navbar-right {
+      float: right;
+    }
+    
+    @media screen and (max-width: 500px) {
+      #navbar a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+      
+      #navbar-right {
+        float: none;
+      }
+    }
+    
+    #one {
+        color:black;
+        text-align: center;
+        font-style: italic;
+        font-size: 150px;
+        font-weight: bold;
+      }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .container /* Class for Border */
+    {
+        width: 25%;
+        margin: 0 auto;
+        background-color: rgb(43, 43, 43); /* background color */
+        padding: 20px; /* Padding around the container */
+        border-radius: 20px;
+    }
+}
+</style>
+        <title Hurrahooraay Songs Register></title> 
+    </head> 
+ 
+    <body> 
+        <div id="navbar">
+      <a href="welcome_page.html" class="logo">
+        <img src="icon.png" width="200" height="54">
+      </a>
+      <div id="navbar-right">
+        <a href="welcome_page.html">Home</a>
+        <a href="aboutUs.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="logout.php">Logout</a>
+      </div>
+    </div>
+
+        <h1> Hurrahooraay Songs Collections </h1> 
+         
+        <form name="registerForm" action="music_register.php" method="POST"> 
+             
+            <i style="color:red;">Please complete all fields marked with *</i><br><br><br> 
+            Title of the song<i style="color:red;">*</i>: <input type="text" name="title" maxlength="20" required> 
+            <br><br> 
+            Artist/Band Name<i style="color:red;">*</i>: <input type="text" name="artist" maxlength="20" required> 
+            <br><br> 
+            Audio OR Video of the song(provides clickable URL)<i style="color:red;">*</i>: <br><input type="url" name="link" maxlength="50" size="70" required> 
+            <br><br> 
+            Genre<i style="color:red;">*</i>:  
+            <select name="genre" required> 
+                <option value="Select" > Select </option> 
+                <option value="Lofi" > Lofi </option> 
+                <option value="Rock" > Rock </option> 
+                <option value="Lullabies" > Lullabies </option> 
+                <option value="Classic" > Classic </option> 
+                <option value="Romantic" > Romantic </option> 
+                <option value="Pop" > Pop</option> 
+                <option value="Jazz" > Jazz </option> 
+                <option value="Alt" > Alt </option> 
+                <option value="RNB" > RNB </option> 
+ 
+            </select> 
+            <br><br> 
+            Language<i style="color:red;">*</i>: 
+            <input type="radio" name="bahasa"  value="Malay" checked> Malay 
+            <input type="radio" name="bahasa"  value="English" > English 
+            <input type="radio" name="bahasa"  value="Korea" > Korea
+            <br><br> 
+            Release Date<i style="color:red;">*</i>: <input type="date" name="releaseDate" required> 
+            <br><br> 
+            Detail: <input type="text" name="detail" maxlength="100"><br> 
+            <i style="font-size:12px;color:red;">N/A if don't have any detail</i> 
+            <br><br> 
+            <input type="reset" value="Cancel"> 
+            <input type="submit" value="Register"> 
+             
+        </form> 
+    </body> 
+</html>
+
+<?php 
+}
+else
+{
+echo "No session exists or session has expired. Please 
+log in again.<br>";
+echo "<a href=login.html> Login </a>";
+}
+?>
